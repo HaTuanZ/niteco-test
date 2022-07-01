@@ -1,0 +1,306 @@
+/* base */
+@font-face {
+	font-family: 'metricweb-regular';
+	src: url('./font/MetricWeb-Regular.woff') format('woff'),
+		url('./font/MetricWeb-Regular.woff2') format('woff2'),
+		url('./font/MetricWeb-Regular.eot'), 
+		url('./font/MetricWeb-Regular.svg'),
+		url('./font/MetricWeb-Regular.ttf');
+}
+
+:root {
+	--body-font: 'metricweb-regular', sans-serif;
+	--bg-primary-color: #1a1a1a;
+	--bg-secondary-color: #21201e;
+	--text-color: #a5a4a2;
+	--text-primary-color: #fff;
+	--primary-color: #dec116;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-family: var(--body-font);
+	font-size: 14px;
+	color: var(--text-primary-color);
+}
+
+a {
+	text-decoration: none;
+}
+
+ul li {
+	list-style: none;
+}
+
+button {
+	border: none;
+	cursor: pointer;
+}
+
+.container {
+	max-width: 1240px;
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+}
+
+/* header */
+header {
+	background-color: var(--bg-primary-color);
+	padding: 1rem 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.header {
+	margin: 0 auto;
+	display: flex;
+}
+
+.header .menu ul {
+	display: flex;
+	align-items: center;
+}
+
+.header .menu ul li {
+	margin-right: 3rem;
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.header .menu ul a {
+	color: var(--text-primary-color);
+}
+
+/* main */
+.banner {
+	position: relative;
+	background-image: url(./images/herohob.jpg);
+	background-size: cover;
+	height: 600px;
+}
+
+.banner .intro {
+	position: absolute;
+	bottom: 48px;
+	left: 100px;
+	width: 500px;
+	height: 290px;
+	background-color: #000;
+	color: var(--primary-color);
+	display: flex;
+	flex-direction: column;
+	padding: 28px;
+}
+
+.banner .intro h1 {
+	font-size: 3.5rem;
+	margin-bottom: 20px;
+}
+
+.banner .intro h3 {
+	font-size: 1.25rem;
+}
+
+.banner .intro button {
+	margin-top: auto;
+	width: 140px;
+	height: 35px;
+	background-color: var(--primary-color);
+	color: #fff;
+}
+
+.product-container {
+	background-color: var(--bg-secondary-color);
+	padding: 48px 0;
+}
+
+.product {
+	display: flex;
+	margin: 0 auto;
+	justify-content: space-around;
+	align-items: stretch;
+}
+
+.product--header {
+	font-weight: 300;
+	font-size: 48px;
+	padding: 24px 0;
+	text-align: center;
+}
+
+.product--item--box-image {
+	height: 200px;
+	text-align: center;
+}
+
+.product--item {
+	display: flex;
+	flex-direction: column;
+	padding: 0 24px;
+	flex-grow: 1;
+	width: 33%;
+}
+
+.product--item--box-image img {
+	height: 100%;
+}
+
+.product--item h3 {
+	font-size: 24px;
+	text-align: center;
+	margin: 24px 0 36px 0;
+}
+
+.product--item p:first-child {
+	margin-bottom: 30px;
+}
+
+.product--item p {
+	text-align: justify;
+	font-weight: 300;
+	font-size: 18px;
+	margin-bottom: 18px;
+}
+
+.product--item:nth-child(3) .product--item--box-image img {
+	transform: rotate(90deg);
+}
+
+footer {
+	background-color: var(--bg-primary-color);
+}
+
+.footer {
+	margin: 0 auto;
+	text-align: center;
+	padding: 24px 0;
+	color: var(--text-color);
+	border-top: 1px solid var(--text-color);
+}
+
+.product--item--box-action {
+	margin-top: auto;
+}
+
+.product--item--box-action button {
+	width: 100%;
+	padding: 12px 0;
+	background-color: var(--primary-color);
+	color: var(--text-primary-color);
+	margin-bottom: 12px;
+}
+
+.product--item--price {
+	font-size: 18px;
+	font-weight: 300;
+}
+
+/* search */
+.wrapper-search {
+	width: 400px;
+	margin-left: auto;
+	position: absolute;
+	right: 150px;
+	top: 15px;
+}
+
+.wrapper-search .search-input {
+	background: #fff;
+	width: 100%;
+	border-radius: 5px;
+	position: relative;
+	box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+.search-input input {
+	height: 48px;
+	width: 100%;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	padding: 0 60px 0 20px;
+	font-size: 18px;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input .icon img {
+	width: 24px;
+	height: 24px;
+}
+
+.search-input.active input {
+	border-radius: 5px 5px 0 0;
+}
+
+.search-input .autocom-box {
+	padding: 0;
+	opacity: 0;
+	pointer-events: none;
+	max-height: 280px;
+	overflow-y: auto;
+	color: #000;
+}
+
+.search-input.active .autocom-box {
+	padding: 10px 8px;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.autocom-box li {
+	list-style: none;
+	padding: 8px 12px;
+	display: none;
+	width: 100%;
+	cursor: default;
+	border-radius: 3px;
+}
+
+.search-input.active .autocom-box li {
+	display: block;
+}
+
+.autocom-box li:hover {
+	background: #efefef;
+}
+
+.search-input .icon {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	height: 55px;
+	width: 55px;
+	text-align: center;
+	line-height: 60px;
+}
+
+.search-input .loading:after {
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: bottom;
+	-webkit-animation: ellipsis steps(4, end) 900ms infinite;
+	animation: ellipsis steps(4, end) 900ms infinite;
+	content: "\2026";
+	/* ascii code for the ellipsis character */
+	width: 0px;
+}
+
+@keyframes ellipsis {
+	to {
+		width: 1.25em;
+	}
+}
+
+@-webkit-keyframes ellipsis {
+	to {
+		width: 1.25em;
+	}
+}
